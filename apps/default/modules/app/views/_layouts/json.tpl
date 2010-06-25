@@ -1,0 +1,1 @@
+<?php echo isset($data) ? json_encode($data) : '{}'; ?>

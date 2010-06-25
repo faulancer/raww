@@ -1,0 +1,1 @@
+<?php echo $this->element($element,(isset($data) ? $data : array())); ?>

@@ -1,0 +1,5 @@
+<IfModule mod_rewrite.c>
+   RewriteEngine on
+   RewriteRule    ^$ apps/default/public/    [L]
+   RewriteRule    (.*) apps/default/public/$1 [L]
+</IfModule>
