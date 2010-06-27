@@ -117,8 +117,8 @@
         
         $___module = Inflector::underscore($this->controller->module);
         
-        if(strpos($elementName,':')){
-          $___temp   = explode(':',$elementName);
+        if(strpos($this->controller->layout,':')){
+          $___temp   = explode(':',$this->controller->layout);
           $___module = Inflector::underscore($___temp[0]);
         }
         
