@@ -121,6 +121,15 @@
       return $out;
     }
     
+    /**
+    * ...
+    *
+    * @return ?
+    */
+    public function __get($name) {
+        return App::getHelper($name);
+    }
+    
   }
 
 ?>

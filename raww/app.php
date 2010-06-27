@@ -120,6 +120,7 @@ class App{
         $classPath = RAWW_APP_MODULES.'app_model.php';
         break;
       default:
+        
         if(isset(self::$_autoloadClasses[$className])){
           if(Utils::isFile(self::$_autoloadClasses[$className])){
             $classPath = self::$_autoloadClasses[$className];
@@ -127,7 +128,21 @@ class App{
             $classPath = RAWW_CORE.self::$_autoloadClasses[$className];
           }
         }else{
-        
+          
+          //check for module controller/module
+          if(preg_match('/(Model|Controller)$/',$className)){
+            
+            $module = Inflector::underscore(str_replace(array('Controller','Model'),'',$className));
+            
+            if(strpos($className,'Controller')){
+              $path_controller = RAWW_APP.'modules'.DS.$module.DS.$module.'_controller.php';
+              if(file_exists($path_controller)) require_once($path_controller);
+            }else{
+              $path_model = RAWW_APP.'modules'.DS.$module.DS.$module.'_model.php';
+              if(file_exists($path_model)) require_once($path_model);        
+            }
+            
+          }
         }
     }
     
