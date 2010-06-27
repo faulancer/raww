@@ -135,10 +135,10 @@ class App{
             $module = Inflector::underscore(str_replace(array('Controller','Model'),'',$className));
             
             if(strpos($className,'Controller')){
-              $path_controller = RAWW_APP.'modules'.DS.$module.DS.$module.'_controller.php';
+              $path_controller = RAWW_APP_MODULES.$module.DS.$module.'_controller.php';
               if(file_exists($path_controller)) require_once($path_controller);
             }else{
-              $path_model = RAWW_APP.'modules'.DS.$module.DS.$module.'_model.php';
+              $path_model = RAWW_APP_MODULES.$module.DS.$module.'_model.php';
               if(file_exists($path_model)) require_once($path_model);        
             }
             
@@ -196,7 +196,7 @@ class App{
     }    
 
     if(!App::classExists($className)){
-      if(!self::import(RAWW_APP.'modules'.DS.$module.DS.'models'.DS.$modelFile)){
+      if(!self::import(RAWW_APP_MODULES.$module.DS.'models'.DS.$modelFile)){
         ObjRegistry::set($className, new SimpleRecord($className));
       }
     }
@@ -227,7 +227,7 @@ class App{
       }
       
       if(!App::classExists($className)){
-        if(!self::import(RAWW_APP.'modules'.DS.$module.DS.'views'.DS.'_helpers'.DS.$helperFile)){
+        if(!self::import(RAWW_APP_MODULES.$module.DS.'views'.DS.'_helpers'.DS.$helperFile)){
 
         }
       }

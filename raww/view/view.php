@@ -56,7 +56,15 @@
       if(Utils::isFile($elementName)){
         $___elementPath = $elementName;
       }else{
-        $___elementModPath = RAWW_APP_MODULES.$this->controller->module.DS.'views'.DS.'_elements'.DS.$elementName.'.tpl';
+        
+        $___module = Inflector::underscore($this->controller->module);
+        
+        if(strpos($elementName,':')){
+          $___temp   = explode(':',$elementName);
+          $___module = Inflector::underscore($___temp[0]);
+        }
+        
+        $___elementModPath = RAWW_APP_MODULES.$___module.DS.'views'.DS.'_elements'.DS.$elementName.'.tpl';
         $___elementAppPath = RAWW_APP_MODULES.'app'.DS.'views'.DS.'_elements'.DS.$elementName.'.tpl';
       
         $___elementPath    = file_exists($___elementModPath) ? $___elementModPath:$___elementAppPath;
@@ -81,7 +89,8 @@
       if(Utils::isFile($this->controller->view)){
         $___viewPath = $this->controller->view; 
       }else{
-        $___viewModPath = RAWW_APP_MODULES.$this->controller->module.DS.'views'.DS.Inflector::underscore($this->controller->name).DS.Inflector::underscore($this->controller->view).'.tpl';
+        $___module      = Inflector::underscore($this->controller->module);
+        $___viewModPath = RAWW_APP_MODULES.$___module.DS.'views'.DS.Inflector::underscore($this->controller->name).DS.Inflector::underscore($this->controller->view).'.tpl';
         $___viewAppPath = RAWW_APP_MODULES.'app'.DS.'views'.DS.Inflector::underscore($this->controller->name).DS.Inflector::underscore($this->controller->view).'.tpl';
         
         $___viewPath    = file_exists($___viewModPath) ? $___viewModPath:$___viewAppPath;
@@ -105,7 +114,15 @@
       if(Utils::isFile($this->controller->layout)){
         $___layoutPath = $this->controller->layout; 
       }else{
-        $___layoutModPath = RAWW_APP_MODULES.$this->controller->module.DS.'views'.DS.'_layouts'.DS.Inflector::underscore($this->controller->layout).'.tpl';
+        
+        $___module = Inflector::underscore($this->controller->module);
+        
+        if(strpos($elementName,':')){
+          $___temp   = explode(':',$elementName);
+          $___module = Inflector::underscore($___temp[0]);
+        }
+        
+        $___layoutModPath = RAWW_APP_MODULES.$___module.DS.'views'.DS.'_layouts'.DS.Inflector::underscore($this->controller->layout).'.tpl';
         $___layoutAppPath = RAWW_APP_MODULES.'app'.DS.'views'.DS.'_layouts'.DS.Inflector::underscore($this->controller->layout).'.tpl';
         
         $___layoutPath    = file_exists($___layoutModPath) ? $___layoutModPath:$___layoutAppPath;
