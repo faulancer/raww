@@ -38,7 +38,7 @@
     */
     public function render(){
       
-      if($this->controller->layout != 'json' && $this->controller->layout != 'element'){
+      if(!in_array($this->controller->layout,array('json','element','flash'))){
         $this->_renderView();   
       }
       return $this->_renderLayout();

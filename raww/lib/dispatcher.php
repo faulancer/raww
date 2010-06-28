@@ -81,7 +81,7 @@ class Dispatcher{
         }
         
         
-        if ($controller->autoRender) {
+        if ($controller->autoRender && !$controller->isRendered) {
           $controller->render();
         }
         

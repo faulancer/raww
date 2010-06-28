@@ -11,7 +11,7 @@ class PagesController extends Controller{
     
     $this->view = RAWW_APP_MODULES.'app'.DS.'views'.DS.'pages'.DS.implode(DS,$parts).'.tpl';
   }
-  
+
 }
 
 ?>

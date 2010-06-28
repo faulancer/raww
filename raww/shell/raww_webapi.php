@@ -29,6 +29,11 @@ class RawwWebapi{
           $task->run();
         }
         break;
+        
+      default:
+        if(Config::read('App.Debug.level') > 0){
+          require_once(RAWW_CORE.'templates'.DS.'webapi.tpl');
+        }
     }
     
     die();

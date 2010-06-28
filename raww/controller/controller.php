@@ -10,7 +10,7 @@ class Controller extends RawwObject{
   public $_viewVars  = array();
   public $action     = array();
   
-  public $_isRendered= false;
+  public $isRendered= false;
   public $autoRender = true;
   
   public $view;
@@ -67,14 +67,14 @@ class Controller extends RawwObject{
   */
   public function render($view=null,$layout=null){
     
-    if(!$this->autoRender || $this->_isRendered) return;
+    if(!$this->autoRender || $this->isRendered) return;
     
     $this->before_render();
       $View = new $this->viewClass($this);
       echo $View->render();
     $this->after_render();
     
-    $this->_isRendered = true;
+    $this->isRendered = true;
     
     return true;
   }
@@ -93,8 +93,33 @@ class Controller extends RawwObject{
   *
   * @return ?
   */  
+  public function is_set($name){
+    return isset($this->_viewVars[$name]);
+  }
+  
+  /**
+  * ...
+  *
+  * @return ?
+  */  
   function redirect($url) {
      Req::redirect($url);
+  }
+  
+  
+  /**
+  * ...
+  *
+  * @return ?
+  */  
+  function flash($message, $url, $pause = 1){
+    $this->layout     = 'flash';
+     
+    $this->set('message', $message); 
+    $this->set('url', $url); 
+    $this->set('pause', $pause);
+    
+    $this->render();
   }
   
 }
