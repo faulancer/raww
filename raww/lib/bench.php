@@ -26,7 +26,8 @@ class Bench {
 		if(isset(self::$m[$name]) && self::$m[$name]['stop'] === false){
 			self::$m[$name]['stop'] = microtime(true);
 			self::$m[$name]['memory_stop'] = memory_get_usage();
-      self::$m[$name]['duration'] = self::$m[$name]['stop'] - self::$m[$name]['sart'];
+			self::$m[$name]['memory_usage'] = self::$m[$name]['memory_stop'] - self::$m[$name]['memory_start'];
+      self::$m[$name]['duration'] = self::$m[$name]['stop'] - self::$m[$name]['start'];
       
       return self::$m[$name];
 		}
