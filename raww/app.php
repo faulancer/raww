@@ -177,7 +177,7 @@ class App{
   */
   public static function getModel($modelName){
     
-    $parts = explode('.',$modelName);
+    $parts = explode(':',$modelName);
     
     switch(count($parts)){
       case 1:
@@ -211,7 +211,7 @@ class App{
   */
   public static function getHelper($helperName){
       
-      $parts = explode('.',$helperName);
+      $parts = explode(':',$helperName);
     
       switch(count($parts)){
         case 1:

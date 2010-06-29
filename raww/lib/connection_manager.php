@@ -20,7 +20,7 @@ class ConnectionManager{
     
     $dataSource = $config['datasource'].'Datasource';
     
-    $parts = explode('.',$dataSource);
+    $parts = explode(':',$dataSource);
   
     switch(count($parts)){
       case 1:
