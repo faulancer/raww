@@ -7,6 +7,7 @@
   //App defaults
   //-----------------------------
   Config::write('App.Charset','UTF-8');
+  Config::write('App.GzipOutput',true);
   
   
   //Session configuration

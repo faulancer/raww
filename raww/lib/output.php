@@ -2,14 +2,16 @@
 
 class Output{
   
-  public static $respondAs = false;
+  public static $respondAs = 'html';
   
   /**
   * ...
   *
   */ 
   public static function start(){
-    ob_start();
+    if(Config::read('App.GzipOutput', true) && !headers_sent() && !ob_start("ob_gzhandler")){
+        ob_start();
+    }
   }
   
   /**
@@ -19,10 +21,9 @@ class Output{
   public static function release(){
     
     if(self::$respondAs){
-    
+        header("Content-type: ".Req::getMimeType(self::$respondAs));
     }
-    
-    echo ob_get_clean();
+
   }
 }
 

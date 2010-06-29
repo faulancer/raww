@@ -30,7 +30,7 @@ class Config{
   * ...
   *
   */  
-  public static function read($key){
+  public static function read($key, $default=null){
     
     $keys = explode('.',$key);
     
@@ -67,7 +67,7 @@ class Config{
         break;
     }
     
-    return null;
+    return $default;
   }
   
   /**

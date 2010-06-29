@@ -22,8 +22,8 @@ class Cache{
   * ...
   *
   */ 
-	public static function read($key){
-    return CacheEngine::get(self::$engine)->read($key);
+	public static function read($key, $default=null){
+    return CacheEngine::get(self::$engine)->read($key, $default);
   }
   /**
   * ...
@@ -92,18 +92,18 @@ class CacheFileEngine{
   * ...
   *
   */ 
-	public function read($key){
+	public function read($key, $default=null){
     $var = @file_get_contents($this->cachePath.md5($key));
 
     if($var===''){
-      return false;
+      return $default;
     }else{
       
       $time = time();
       $var  = unserialize($var);
      
       if(($var['expire'] < $time) && $var['expire']!=-1){
-        return false;
+        return $default;
       }
 
       return unserialize($var['value']);

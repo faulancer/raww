@@ -32,8 +32,8 @@ class Session{
   * ...
   *
   */ 
-	public static function read($key){
-    return SessionEngine::get(self::$engine)->read($key);
+	public static function read($key, $default=null){
+    return SessionEngine::get(self::$engine)->read($key, $default);
   }
   /**
   * ...
@@ -125,7 +125,7 @@ class SessionPhpEngine{
   * ...
   *
   */ 
-	public function read($key){
+	public function read($key, $default=null){
 
     $keys = explode('.',$key);
     
@@ -156,7 +156,7 @@ class SessionPhpEngine{
         break;
     }
     
-    return null;
+    return $default;
   }
   /**
   * ...
