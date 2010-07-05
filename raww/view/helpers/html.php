@@ -106,7 +106,11 @@
   */
     public function img($file,$attributes=array()){
       
-      $output = '<img src="'.Router::getBaseUrl().'/img/'.$file.'" '.$this->attributes($attributes).' />';
+      if (strpos($file,'://') === false) {
+        $file = Router::getBaseUrl().'/img/'.$file;
+      }
+      
+      $output = '<img src="'.$file.'" '.$this->attributes($attributes).' />';
       
       return $output;
     }
