@@ -138,8 +138,11 @@ class PdoDataSource extends DataSource{
       if($this->pdo->exec($sql)){
       
       }else{
-        trigger_error('SQL Error: '.implode(', ',$this->pdo->errorInfo()).":\n".$sql);
-        return false;
+        $errorInfo = $this->pdo->errorInfo();
+        if($errorInfo[0]!='00000'){
+            trigger_error('SQL Error: '.implode(', ',$errorInfo).":\n".$sql);
+            return false;
+        }
       }
       
     }

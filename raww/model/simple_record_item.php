@@ -30,7 +30,9 @@ class SimpleRecordItem extends RawwObject{
     }
     
     if($this->id){
-      $this->model->update($this->data,$this->id);  
+      $data = $this->data;
+      unset($data[$this->model->primary_key]);
+      $this->model->update($data,$this->id);  
     }else{
       $this->id = $this->model->create($this->data);
     }
