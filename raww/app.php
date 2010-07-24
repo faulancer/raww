@@ -33,6 +33,7 @@ class App{
     
     'Model'            => 'model/model.php',
     'SimpleRecord'     => 'model/simple_record.php',
+    'SimpleRecordItem' => 'model/simple_record_item.php',
     'Controller'       => 'controller/controller.php',
     'View'             => 'view/view.php',
     

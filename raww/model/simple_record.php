@@ -4,13 +4,13 @@ class SimpleRecord extends Model{
   
   protected $table       = null;
   protected $columns     = null;
-  protected $primary_key = 'id';
   
   protected $belongs_to = array();
   protected $has_one    = array();
   protected $__compiledRelations = false;
   
-  public $connection = 'default';
+  public $primary_key = 'id';
+  public $connection  = 'default';
   
   /**
   * ...
@@ -254,6 +254,23 @@ class SimpleRecord extends Model{
     
     return $this->D($this->connection)->delete($this->table,$conditions);
   }
+
+  /**
+  * ...
+  *
+  */ 
+  public function record($data=array()){
+     
+     if(is_numeric($data)){
+        $data = $this->read($data);
+        $data = $data[$this->name];
+     }
+     
+     $record = new SimpleRecordItem($this, $data);
+    
+    return $record;
+  }
+
   
   /**
   * ...

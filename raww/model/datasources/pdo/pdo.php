@@ -131,7 +131,7 @@ class PdoDataSource extends DataSource{
       
       $fields = implode(',', $fields);
       
-      $sql = "UPDATE ".$this->table." SET {$fields} {$conditions}";
+      $sql = "UPDATE ".$table." SET {$fields} {$conditions}";
       
       $this->log['queries'][] = $sql;
       
