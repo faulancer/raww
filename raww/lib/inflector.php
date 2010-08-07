@@ -3,50 +3,49 @@
 class Inflector{
   
   private static $uncountable = array(
-		'access' => 1,
-		'advice' => 1,
-		'art' => 1,
-		'baggage' => 1,
-		'dances' => 1,
-		'equipment' => 1,
-		'fish' => 1,
-		'fuel' => 1,
-		'furniture' => 1,
-		'food' => 1,
-		'heat' => 1,
-		'honey' => 1,
-		'homework' => 1,
-		'impatience' => 1,
-		'information' => 1,
-		'knowledge' => 1,
-		'luggage' => 1,
-		'money' => 1,
-		'music' => 1,
-		'news' => 1,
-		'patience' => 1,
-		'progress' => 1,
-		'pollution' => 1,
-		'research' => 1,
-		'rice' => 1,
-		'sand' => 1,
-		'series' => 1,
-		'sheep' => 1,
-		'sms' => 1,
-		'species' => 1,
-		'staff' => 1,
-		'toothpaste' => 1,
-		'traffic' => 1,
-		'understanding' => 1,
-		'water' => 1,
-		'weather' => 1,
-		'work' => 1
+		'access',
+		'advice',
+		'art',
+		'baggage',
+		'equipment',
+		'fish',
+		'fuel',
+		'furniture',
+		'food',
+		'heat',
+		'honey',
+		'homework',
+		'impatience',
+		'information',
+		'knowledge',
+		'luggage',
+		'media',
+		'money',
+		'music',
+		'news',
+		'patience',
+		'progress',
+		'pollution',
+		'research',
+		'rice',
+		'sand',
+		'series',
+		'sheep',
+		'sms',
+		'species',
+		'staff',
+		'toothpaste',
+		'traffic',
+		'understanding',
+		'water',
+		'weather',
+		'work'
 	);
 
 	private static $irregular = array(
 		'child' => 'children',
 		'clothes' => 'clothing',
 		'man' => 'men',
-		'movie' => 'movies',
 		'person' => 'people',
 		'woman' => 'women',
 		'mouse' => 'mice',
@@ -63,13 +62,17 @@ class Inflector{
   */ 
   public static function toPlural($word) {
 		
-    if(isset(self::$uncountable[strtolower($word)])){
+    if(in_array($word, self::$uncountable[strtolower($word)])){
       return $word;
     }
     
     
     if(isset(self::$irregular[strtolower($word)])){
       return self::$irregular[strtolower($word)];
+    }
+    
+    if(substr($word,-1)=='y'){
+      $word = substr($word, 0, strlen($word)-1).'ie';
     }
     
     return $word .= 's';
