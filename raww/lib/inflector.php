@@ -115,5 +115,3 @@ class Inflector{
         return str_replace(' ','',ucwords(preg_replace('/[^A-Z^a-z^0-9]+/',' ',$word)));
   }
 }
-
-?>

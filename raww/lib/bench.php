@@ -53,5 +53,3 @@ class Bench {
 		return self::$m[$name];
 	}
 }
-
-?>

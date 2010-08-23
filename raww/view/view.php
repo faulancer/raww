@@ -1,6 +1,6 @@
 <?php
   
-  class View extends RawwObject{
+class View extends RawwObject{
     
     public $name;
     public $module;
@@ -147,6 +147,4 @@
         return App::getHelper($name);
     }
     
-  }
-
-?>
+}

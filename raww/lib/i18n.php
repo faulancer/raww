@@ -77,5 +77,3 @@ class I18nArrayEngine{
 
   
 }
-
-?>

@@ -1,7 +1,7 @@
 <?php
 
-  
-  class SQLITEAdapter extends DbAdapter{
+
+class SQLITEAdapter extends DbAdapter{
   
     public function limit($limit,$offset){
       if ($limit) {
@@ -42,7 +42,4 @@
       
         return $columns;
     }
-  
-  }
-  
-?>
+}

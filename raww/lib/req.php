@@ -21,7 +21,7 @@ class Req {
     'txt'   => 'text/plain',
     'bmp'   => 'image/bmp',
     'rss'		=> 'application/rss+xml',
-		'atom'  => 'application/atom+xml',
+	'atom'  => 'application/atom+xml',
     'gif'   => 'image/gif',
     'jpeg'  => 'image/jpeg',
     'jpg'   => 'image/jpeg',
@@ -163,5 +163,3 @@ class Req {
   }
 
 }
-
-?>

@@ -207,5 +207,3 @@ class SessionPhpEngine{
     session_destroy();
   }
 }
-
-?>

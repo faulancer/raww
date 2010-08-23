@@ -213,5 +213,3 @@ class Router{
     return false;
   }
 }
-
-?>

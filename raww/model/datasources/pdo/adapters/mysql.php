@@ -118,8 +118,4 @@ class MYSQLAdapter extends DbAdapter{
       
       return $columns;
     }
-    
-  
 }
-  
-?>

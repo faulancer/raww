@@ -26,4 +26,3 @@ class Zend{
         Zend_Loader::isReadable($filename);
   }
 }
-?>

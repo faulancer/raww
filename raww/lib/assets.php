@@ -86,5 +86,3 @@ class Assets {
     App::shutdown();
   }
 }
-
-?>

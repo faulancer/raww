@@ -123,5 +123,3 @@ class Controller extends RawwObject{
   }
   
 }
-
-?>

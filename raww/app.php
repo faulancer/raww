@@ -258,5 +258,3 @@ class App{
 }
 
 spl_autoload_register(array('App','autoload'));
-
-?>

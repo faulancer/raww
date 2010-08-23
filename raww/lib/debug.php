@@ -52,5 +52,3 @@ class Debug{
     echo '</div>';
   }
 }
-
-?>

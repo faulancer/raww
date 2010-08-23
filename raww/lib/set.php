@@ -82,4 +82,3 @@ class Set{
 		return $return;
 	}
 }
-?>

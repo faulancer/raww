@@ -154,5 +154,3 @@ class Config{
     return true;
   }
 }
-
-?>

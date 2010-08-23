@@ -14,5 +14,3 @@ class Model extends RawwObject{
   
   }  
 }
-
-?>

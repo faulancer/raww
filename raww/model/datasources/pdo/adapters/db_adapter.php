@@ -31,5 +31,3 @@ class DbAdapter{
       return $name;
     }
 }
-  
-?>

@@ -383,5 +383,3 @@ class SimpleRecord extends Model{
   }
   
 }
-
-?>

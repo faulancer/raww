@@ -38,4 +38,3 @@
   require_once(RAWW_APP_CONFIG.'bootstrap.php');
   
   Dispatcher::delegate();
-?>
