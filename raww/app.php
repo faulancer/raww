@@ -1,8 +1,9 @@
 <?php
 
 
+require_once(RAWW_CORE.'lib'.DS.'path.php');
 require_once(RAWW_CORE.'lib'.DS.'utils.php');
-  
+
 
 class App{
 
@@ -12,46 +13,45 @@ class App{
   */ 
   public static $_autoloadClasses = array(
       // MAIN
-      'RawwObject'       => 'lib/raww_object.php',
-      'RawwTask'         => 'lib/raww_task.php',
-      'RawwEvent'        => 'lib/raww_event.php',
-      'ObjRegistry'      => 'lib/obj_registry.php',
-      'Router'           => 'lib/router.php',
-      'Req'              => 'lib/req.php',
-      'Dispatcher'       => 'lib/dispatcher.php',
-      'Output'           => 'lib/output.php',
-      'Inflector'        => 'lib/inflector.php',
-      'Config'           => 'lib/config.php',
-      'Cache'            => 'lib/cache.php',
-      'Session'          => 'lib/session.php',
-      'I18n'             => 'lib/i18n.php',
-      'Utils'            => 'lib/utils.php',
-      'Security'         => 'lib/security.php',
-      'Set'              => 'lib/set.php',
-      'Path'             => 'lib/path.php',
-      'String'           => 'lib/string.php',
-      'Debug'            => 'lib/debug.php',
+      'RawwObject'       => 'lib:raww_object.php',
+      'RawwTask'         => 'lib:raww_task.php',
+      'RawwEvent'        => 'lib:raww_event.php',
+      'ObjRegistry'      => 'lib:obj_registry.php',
+      'Router'           => 'lib:router.php',
+      'Req'              => 'lib:req.php',
+      'Dispatcher'       => 'lib:dispatcher.php',
+      'Output'           => 'lib:output.php',
+      'Inflector'        => 'lib:inflector.php',
+      'Config'           => 'lib:config.php',
+      'Cache'            => 'lib:cache.php',
+      'Session'          => 'lib:session.php',
+      'I18n'             => 'lib:i18n.php',
+      'Utils'            => 'lib:utils.php',
+      'Security'         => 'lib:security.php',
+      'Set'              => 'lib:set.php',
+      'String'           => 'lib:string.php',
+      'Debug'            => 'lib:debug.php',
 
-      'Model'            => 'model/model.php',
-      'SimpleRecord'     => 'model/simple_record.php',
-      'SimpleRecordItem' => 'model/simple_record_item.php',
-      'Controller'       => 'controller/controller.php',
-      'View'             => 'view/view.php',
+      'Model'            => 'core:model/model.php',
+      'SimpleRecord'     => 'core:model/simple_record.php',
+      'SimpleRecordItem' => 'core:model/simple_record_item.php',
+      'Controller'       => 'core:controller/controller.php',
+      'View'             => 'core:view/view.php',
 
-      'Bench'            => 'lib/bench.php',
-      'Validate'         => 'lib/validate.php',
-      'Auth'             => 'lib/auth.php',
-      'Assets'           => 'lib/assets.php',
-      'RawwError'        => 'lib/raww_error.php',
-      'Zend'             => 'lib/zend.php',
+      'Bench'            => 'lib:bench.php',
+      'Validate'         => 'lib:validate.php',
+      'Auth'             => 'lib:auth.php',
+      'Assets'           => 'lib:assets.php',
+      'RawwError'        => 'lib:raww_error.php',
+      'Zend'             => 'lib:zend.php',
 
-      'ConnectionManager'=> 'lib/connection_manager.php',
-      'DataSource'       => 'model/datasources/data_source.php',
-      'PdoDataSource'    => 'model/datasources/pdo/pdo.php',
+      'ConnectionManager'=> 'lib:connection_manager.php',
+      'DataSource'       => 'core:model/datasources/data_source.php',
+      'PdoDataSource'    => 'core:model/datasources/pdo/pdo.php',
 
-      'HtmlHelper'       => 'view/helpers/html.php',
-      'FormHelper'       => 'view/helpers/form.php',
-      'TextHelper'       => 'view/helpers/text.php'
+      'HtmlHelper'       => 'core:view/helpers/html.php',
+      'FormHelper'       => 'core:view/helpers/form.php',
+      'TextHelper'       => 'core:view/helpers/text.php'
   );
   
   
@@ -61,9 +61,12 @@ class App{
   * @return ?
   */ 
   public static function import($file,$folder = null){
-  
     if(!Utils::isFile($file)){
-      $file = $folder.DS.$file.'.php';
+      if(strpos($file,':')){
+          $file = Path::find($file);
+      } else {
+          $file = $folder.$file;
+      }
     }
     
     if(file_exists($file)){
@@ -71,9 +74,7 @@ class App{
     }else{
       return false;
     }
-    
     return true;
-    
   }
 
   /**
@@ -82,7 +83,7 @@ class App{
   * @return ?
   */
   public static function addClass($className,$path){
-    self::$_autoloadClasses[$className] = $path;
+      self::$_autoloadClasses[$className] = $path;
   }
   
   /**
@@ -124,11 +125,8 @@ class App{
       default:
         
         if(isset(self::$_autoloadClasses[$className])){
-          if(Utils::isFile(self::$_autoloadClasses[$className])){
-            $classPath = self::$_autoloadClasses[$className];
-          }else{
-            $classPath = RAWW_CORE.self::$_autoloadClasses[$className];
-          }
+          self::import(self::$_autoloadClasses[$className],RAWW_CORE);
+          return;
         }else{
           
           //check for module controller/module
@@ -148,7 +146,7 @@ class App{
         }
     }
     
-    if(!is_null($classPath)){
+    if($classPath){
       include_once $classPath;
     }else{
       //todo

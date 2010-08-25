@@ -16,11 +16,11 @@ class Path {
         $parts = explode(':', $file, 2);
 
         if(count($parts)==2){
-           if(!isset(self::$_paths[$context])) return false;
+           if(!isset(self::$_paths[$parts[0]])) return false;
 
-           foreach(self::$_paths[$context] as &$path){
-               if(file_exists($path.$file)){
-                  return $path.$file;
+           foreach(self::$_paths[$parts[0]] as &$path){
+               if(file_exists($path.$parts[1])){
+                  return $path.$parts[1];
                }
            }
         }

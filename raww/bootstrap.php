@@ -26,11 +26,12 @@
   require_once(RAWW_CORE.'app.php');
 
   Path::register('core', RAWW_CORE);
+  Path::register('app', RAWW_APP);
+  Path::register('modules', RAWW_APP_MODULES);
   Path::register('lib', RAWW_CORE_LIBS);
   Path::register('lib', RAWW_APP_LIBS);
   Path::register('vendor', RAWW_APPS_VENDOR);
   Path::register('vendor', RAWW_APP_VENDOR);
-  Path::register('modules', RAWW_APP_MODULES);
   Path::register('files', RAWW_WEBROOT.'files');
 
   //Load settings
