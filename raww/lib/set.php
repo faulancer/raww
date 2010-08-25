@@ -80,5 +80,9 @@ class Set{
 			}
 		}
 		return $return;
-	}
+  }
+
+  public static function get($array, $key, $default=false){
+      return isset($array[$key]) ? $array[$key] : $default;
+  }
 }

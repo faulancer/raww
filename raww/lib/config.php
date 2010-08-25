@@ -11,19 +11,21 @@ class Config{
   public static function load($configFile){
     
     if(!Utils::isFile($configFile)){
-      $configFile = RAWW_APP_CONFIG.$configFile.'.php';
+        if(strpos($configFile,':')){
+          $___temp   = explode(':',$elementName);
+          $___module = Inflector::underscore($___temp[0]);
+
+          $configFile = RAWW_APP_MODULES.$___module.DS.$___temp[1].'.php';
+        } else {
+          $configFile = RAWW_APP_CONFIG.$configFile.'.php';
+        }
     }
     
     include_once($configFile);
 
-    if(isset($config)){
-      if(is_array($config)){
-        foreach($config as $key => $c){
-          self::$_collection[$key] = $c;
-        }
-      }
+    if(isset($config) && is_array($config)){
+        foreach($config as $key => $c) self::$_collection[$key] = $c;
     }
-    
   }
   
   /**

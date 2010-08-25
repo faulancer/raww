@@ -28,11 +28,11 @@ class String{
   
   // UTF8 Helper
   
-  public static function strlen($str){
+  public static function len($str){
 		return mb_strlen($str);
   }
   
-  public static function strpos($str, $search, $offset = false){
+  public static function pos($str, $search, $offset = false){
     if (strlen($str) && strlen($search)){
       return ($offset === false) ? mb_strpos($str, $search) : mb_strpos($str, $search, $offset);
 		}else{
@@ -44,12 +44,16 @@ class String{
     return ($length===false) ? mb_substr($str, $offset) : mb_substr($str, $offset, $length);
   }
   
-  public static function strtolower($str){
+  public static function lower($str){
 		return mb_strtolower($str);
   }
   
-  public static function strtoupper($str){
+  public static function upper($str){
 		return mb_strtoupper($str);
+  }
+
+  public static function capitalize($str){
+      return mb_convert_case($str, MB_CASE_TITLE, 'UTF-8');
   }
   
   public static function time2str($ts){

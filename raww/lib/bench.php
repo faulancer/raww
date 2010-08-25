@@ -12,7 +12,7 @@ class Bench {
 		self::$m[$name] = array(
 			'start'        => microtime(true),
 			'stop'         => false,
-      'duration'     => null,
+            'duration'     => null,
 			'memory_start' => memory_get_usage(),
 			'memory_stop'  => false
 		);
@@ -27,9 +27,9 @@ class Bench {
 			self::$m[$name]['stop'] = microtime(true);
 			self::$m[$name]['memory_stop'] = memory_get_usage();
 			self::$m[$name]['memory_usage'] = self::$m[$name]['memory_stop'] - self::$m[$name]['memory_start'];
-      self::$m[$name]['duration'] = self::$m[$name]['stop'] - self::$m[$name]['start'];
+            self::$m[$name]['duration'] = self::$m[$name]['stop'] - self::$m[$name]['start'];
       
-      return self::$m[$name];
+            return self::$m[$name];
 		}
 	}
 

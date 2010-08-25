@@ -191,8 +191,6 @@ class Router{
       if(substr($r['path'],0,1)=='#' && substr($r['path'],-1)=='#'){
         
         if(preg_match($r['path'],$url,$matches)){
-
-         
           //assign params
           if(!count($r['options']['params'])){
             $r['options']['params'][0] = $matches;

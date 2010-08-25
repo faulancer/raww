@@ -10,47 +10,48 @@ class App{
   * ...
   *
   */ 
-  public static $_autoloadClasses=array(
-		// MAIN
-    'RawwObject'       => 'lib/raww_object.php',
-    'RawwTask'         => 'lib/raww_task.php',
-    'RawwEvent'        => 'lib/raww_event.php',
-    'ObjRegistry'      => 'lib/obj_registry.php',
-    'Router'           => 'lib/router.php',
-    'Req'              => 'lib/req.php',
-    'Dispatcher'       => 'lib/dispatcher.php',
-    'Output'           => 'lib/output.php',
-    'Inflector'        => 'lib/inflector.php',
-    'Config'           => 'lib/config.php',
-    'Cache'            => 'lib/cache.php',
-    'Session'          => 'lib/session.php',
-    'I18n'             => 'lib/i18n.php',
-    'Utils'            => 'lib/utils.php',
-    'Security'         => 'lib/security.php',
-    'Set'              => 'lib/set.php',
-    'String'           => 'lib/string.php',
-    'Debug'            => 'lib/debug.php',
-    
-    'Model'            => 'model/model.php',
-    'SimpleRecord'     => 'model/simple_record.php',
-    'SimpleRecordItem' => 'model/simple_record_item.php',
-    'Controller'       => 'controller/controller.php',
-    'View'             => 'view/view.php',
-    
-    'Bench'            => 'lib/bench.php',
-    'Validate'         => 'lib/validate.php',
-    'Auth'             => 'lib/auth.php',
-    'Assets'           => 'lib/assets.php',
-    'RawwError'        => 'lib/raww_error.php',
-    'Zend'             => 'lib/zend.php',
-    
-    'ConnectionManager'=> 'lib/connection_manager.php',
-    'DataSource'       => 'model/datasources/data_source.php',
-    'PdoDataSource'    => 'model/datasources/pdo/pdo.php',
-    
-    'HtmlHelper'       => 'view/helpers/html.php',
-    'FormHelper'       => 'view/helpers/form.php',
-    'TextHelper'       => 'view/helpers/text.php'
+  public static $_autoloadClasses = array(
+      // MAIN
+      'RawwObject'       => 'lib/raww_object.php',
+      'RawwTask'         => 'lib/raww_task.php',
+      'RawwEvent'        => 'lib/raww_event.php',
+      'ObjRegistry'      => 'lib/obj_registry.php',
+      'Router'           => 'lib/router.php',
+      'Req'              => 'lib/req.php',
+      'Dispatcher'       => 'lib/dispatcher.php',
+      'Output'           => 'lib/output.php',
+      'Inflector'        => 'lib/inflector.php',
+      'Config'           => 'lib/config.php',
+      'Cache'            => 'lib/cache.php',
+      'Session'          => 'lib/session.php',
+      'I18n'             => 'lib/i18n.php',
+      'Utils'            => 'lib/utils.php',
+      'Security'         => 'lib/security.php',
+      'Set'              => 'lib/set.php',
+      'Path'             => 'lib/path.php',
+      'String'           => 'lib/string.php',
+      'Debug'            => 'lib/debug.php',
+
+      'Model'            => 'model/model.php',
+      'SimpleRecord'     => 'model/simple_record.php',
+      'SimpleRecordItem' => 'model/simple_record_item.php',
+      'Controller'       => 'controller/controller.php',
+      'View'             => 'view/view.php',
+
+      'Bench'            => 'lib/bench.php',
+      'Validate'         => 'lib/validate.php',
+      'Auth'             => 'lib/auth.php',
+      'Assets'           => 'lib/assets.php',
+      'RawwError'        => 'lib/raww_error.php',
+      'Zend'             => 'lib/zend.php',
+
+      'ConnectionManager'=> 'lib/connection_manager.php',
+      'DataSource'       => 'model/datasources/data_source.php',
+      'PdoDataSource'    => 'model/datasources/pdo/pdo.php',
+
+      'HtmlHelper'       => 'view/helpers/html.php',
+      'FormHelper'       => 'view/helpers/form.php',
+      'TextHelper'       => 'view/helpers/text.php'
   );
   
   
