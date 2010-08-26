@@ -1,9 +1,7 @@
 <?php
 
-
 require_once(RAWW_CORE.'lib'.DS.'path.php');
 require_once(RAWW_CORE.'lib'.DS.'utils.php');
-
 
 class App{
 
@@ -32,11 +30,11 @@ class App{
       'String'           => 'lib:string.php',
       'Debug'            => 'lib:debug.php',
 
-      'Model'            => 'core:model/model.php',
-      'SimpleRecord'     => 'core:model/simple_record.php',
-      'SimpleRecordItem' => 'core:model/simple_record_item.php',
-      'Controller'       => 'core:controller/controller.php',
-      'View'             => 'core:view/view.php',
+      'Model'            => 'lib:model/model.php',
+      'SimpleRecord'     => 'lib:model/simple_record.php',
+      'SimpleRecordItem' => 'lib:model/simple_record_item.php',
+      'Controller'       => 'lib:controller/controller.php',
+      'View'             => 'lib:view/view.php',
 
       'Bench'            => 'lib:bench.php',
       'Validate'         => 'lib:validate.php',
@@ -46,12 +44,12 @@ class App{
       'Zend'             => 'lib:zend.php',
 
       'ConnectionManager'=> 'lib:connection_manager.php',
-      'DataSource'       => 'core:model/datasources/data_source.php',
-      'PdoDataSource'    => 'core:model/datasources/pdo/pdo.php',
+      'DataSource'       => 'lib:model/datasources/data_source.php',
+      'PdoDataSource'    => 'lib:model/datasources/pdo/pdo.php',
 
-      'HtmlHelper'       => 'core:view/helpers/html.php',
-      'FormHelper'       => 'core:view/helpers/form.php',
-      'TextHelper'       => 'core:view/helpers/text.php'
+      'HtmlHelper'       => 'lib:view/helpers/html.php',
+      'FormHelper'       => 'lib:view/helpers/form.php',
+      'TextHelper'       => 'lib:view/helpers/text.php'
   );
   
   

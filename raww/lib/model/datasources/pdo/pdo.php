@@ -1,9 +1,9 @@
 <?php
 
 
-App::import(RAWW_CORE.'model'.DS.'datasources'.DS.'pdo'.DS.'adapters'.DS.'db_adapter.php');
-App::import(RAWW_CORE.'model'.DS.'datasources'.DS.'pdo'.DS.'adapters'.DS.'mysql.php');
-App::import(RAWW_CORE.'model'.DS.'datasources'.DS.'pdo'.DS.'adapters'.DS.'sqlite.php');
+App::import('lib:model/datasources/pdo/adapters/db_adapter.php');
+App::import('lib:model/datasources/pdo/adapters/mysql.php');
+App::import('lib:model/datasources/pdo/adapters/sqlite.php');
 
 
 class PdoDataSource extends DataSource{

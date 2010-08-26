@@ -1,7 +1,5 @@
 <?php
 
-
-
   defined('RAWW_REQ_BEGIN_TIME') or define('REQ_BEGIN_TIME',microtime(true));
   
   define('DS',                    DIRECTORY_SEPARATOR);
@@ -25,14 +23,15 @@
 
   require_once(RAWW_CORE.'app.php');
 
-  Path::register('core', RAWW_CORE);
-  Path::register('app', RAWW_APP);
-  Path::register('modules', RAWW_APP_MODULES);
-  Path::register('lib', RAWW_CORE_LIBS);
-  Path::register('lib', RAWW_APP_LIBS);
-  Path::register('vendor', RAWW_APPS_VENDOR);
-  Path::register('vendor', RAWW_APP_VENDOR);
-  Path::register('files', RAWW_WEBROOT.'files');
+  Path::register('core',          RAWW_CORE);
+  Path::register('app',           RAWW_APP);
+  Path::register('modules',       RAWW_APP_MODULES);
+  Path::register('lib',           RAWW_CORE_LIBS);
+  Path::register('lib',           RAWW_APP_LIBS);
+  Path::register('vendor',        RAWW_APPS_VENDOR);
+  Path::register('vendor',        RAWW_APP_VENDOR);
+  Path::register('files',         RAWW_WEBROOT.'files');
+  Path::register('public',        RAWW_WEBROOT);
 
   //Load settings
   Config::load('settings');

@@ -4,12 +4,10 @@ class Path {
     public static $_paths = array();
 
     public static function register($context, $path){
-
         if(!isset(self::$_paths[$context])) {
             self::$_paths[$context] = array();
         }
-
-        self::$_paths[$context][] = rtrim(str_replace(DS,'/',$path), '/').'/';
+        array_unshift(self::$_paths[$context], rtrim(str_replace(DS,'/',$path), '/').'/');
     }
 
     public static function find($file){
