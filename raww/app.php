@@ -39,6 +39,7 @@ class App{
       'Bench'            => 'lib:bench.php',
       'Validate'         => 'lib:validate.php',
       'Auth'             => 'lib:auth.php',
+      'SimpleAcl'        => 'lib:simple_acl.php',
       'Assets'           => 'lib:assets.php',
       'RawwError'        => 'lib:raww_error.php',
       'Zend'             => 'lib:zend.php',
