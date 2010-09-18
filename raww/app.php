@@ -13,7 +13,7 @@ class App{
       // MAIN
       'RawwObject'       => 'lib:raww_object.php',
       'RawwTask'         => 'lib:raww_task.php',
-      'RawwEvent'        => 'lib:raww_event.php',
+      'Events'           => 'lib:events.php',
       'ObjRegistry'      => 'lib:obj_registry.php',
       'Router'           => 'lib:router.php',
       'Req'              => 'lib:req.php',

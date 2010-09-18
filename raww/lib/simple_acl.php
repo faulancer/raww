@@ -76,15 +76,28 @@ class SimpleAcl {
   */ 
   public function isAllowed($role, $resource, $action){
     
-    if(!isset($this->resources[$resource]) || !isset($this->roles[$role])){
+    if(!isset($this->resources[$resource])){
         return false;
     }
-
-    //isSuperAdmin or action is allowed
-    if($this->roles[$role] || isset($this->rights[$role][$resource][$action])) {
-        return true;
-    }
     
+    if(is_array($role)){
+        foreach($role as $r){
+            
+            if(!isset($this->roles[$r])) continue;
+            
+            if($this->roles[$r]==true || isset($this->rights[$r][$resource][$action])) {
+                return true;
+            }
+        }
+    }else{
+        
+        if(!isset($this->roles[$role])) return false;
+        
+        if($this->roles[$role]==true || isset($this->rights[$role][$resource][$action])) {
+            return true;
+        }
+    }
+
     return false;
   }
   
