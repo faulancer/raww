@@ -16,14 +16,11 @@ class RawwError{
       
       ob_start();
         include(RAWW_CORE.'templates'.DS.'default.tpl');
-      echo ob_get_clean();
+      die(ob_get_clean());
       
     }else{
-      header("HTTP/1.0 404 Not Found");
+      self::show404();      
     }
-    
-    die();
-    
   }
   
   /**
@@ -46,6 +43,20 @@ class RawwError{
     
     return $ret;
     
+  }
+  
+  
+  public static function show404(){
+
+      if(file_exists(RAWW_APP_MODULES.'app'.DS.'views'.DS.'_layouts'.DS.'404.tpl')){
+        ob_start();
+            include(RAWW_APP_MODULES.'app'.DS.'views'.DS.'_layouts'.DS.'404.tpl');
+        echo ob_get_clean();
+      }else{
+        header("HTTP/1.0 404 Not Found");
+      }
+      
+      die();
   }
   
 }
