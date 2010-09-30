@@ -47,6 +47,7 @@ class App{
       'ConnectionManager'=> 'lib:connection_manager.php',
       'DataSource'       => 'lib:model/datasources/data_source.php',
       'PdoDataSource'    => 'lib:model/datasources/pdo/pdo.php',
+      'MongoDbDataSource'=> 'lib:model/datasources/mongodb.php',
 
       'HtmlHelper'       => 'lib:view/helpers/html.php',
       'FormHelper'       => 'lib:view/helpers/form.php',
