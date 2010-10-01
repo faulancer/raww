@@ -4,7 +4,20 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<title><?php echo isset($pageTitle) ? $pageTitle:''; ?></title>
     
-    <?php echo $this->H('Html')->css('style');?>
+        <script type="text/javascript">
+          (function(){  
+            WEBROOT = '<?php echo Router::getBaseUrl().'/';?>';
+            BASE    = '<?php echo Router::getBaseUrl();?>';
+          })();
+        </script>
+    
+        <?php
+            echo $this->H('Html')->css('style');
+            
+            // load assets defined in config/assets.php
+            // echo $this->H('Html')->assets('css','main');
+            // echo $this->H('Html')->assets('js','main');
+        ?>
     
 	</head>
 	<body>

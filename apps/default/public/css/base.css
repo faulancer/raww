@@ -1,0 +1,211 @@
+* {
+  padding: 0px;
+  margin:0px;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body{
+  font: normal 18px Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  text-transform: normal;
+  letter-spacing: normal;
+  line-height: 1.4em;
+  color: #525760;
+}
+
+h1, h2{
+  font-size: 44px;
+  font-weight: bold;
+  letter-spacing: -2px;
+  line-height: 1.2em;
+}
+
+h2{
+    font-weight: normal;
+    font-size: 36px;
+    letter-spacing: -1px;
+}
+
+/* FORM STUFF */
+
+form p{
+  margin-bottom: 20px;
+}
+form label{
+  font-weight: bold;
+}
+button,input, select, textarea {
+  color: #444;
+  font-size: 1.2em;
+  font-family: "Lucida Grande", sans-serif;
+  line-height:1.1em !important;
+  padding: 5px;
+}
+input[type='text'], input[type='password'], select, textarea {
+  background-color: #fff;
+  border: 1px solid #ccc;
+}
+
+button, input[type='button'], input[type='submit'] {
+  height: 2em;
+  font-size: 1.1em;
+  color: #444;
+  margin-top: 10px;
+  padding: 5px 10px;
+}
+
+input.checkbox {vertical-align: top; margin:2px 5px 0 0;}
+
+/* LAYOUT STUFF */
+
+.wrapper{
+  width: 950px;
+  margin: 0px auto;
+}
+
+.clearfix:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+ 
+.clearfix {
+	display: inline-block;
+}
+ 
+html[xmlns] .clearfix {
+	display: block;
+}
+ 
+* html .clearfix {
+	height: 1%;
+}
+
+float-r{ float: right; }
+float-l{ float: left; }
+
+/*
+<div class="six_column section">
+  <div class="two column">
+    <div class="column_content">
+      ...
+    </div>
+  </div>                        
+  <div class="three column">      
+    <div class="column_content">
+      ...
+    </div>
+  </div>                        
+  <div class="one column">      
+    <div class="column_content">
+      ...
+    </div>
+  </div>
+</div>  
+*/
+
+/* .section and .column are required in your HTML */
+div.section {display:table; width:100%; border-collapse:collapse;}
+div.column {display: table-cell;vertical-align:top;}
+
+/* .column widths, -10% of "precived width" for 6 column layouts */
+div.six_column.section div.one {width:15%;}
+div.six_column.section div.two {width:30%;}
+div.six_column.section div.three {width:45%;}
+div.six_column.section div.four {width:60%;}
+div.six_column.section div.five {width:75%;}
+div.six_column.section div.six {width:90%;}
+
+div.nine_column.section div.one {width:10%;}
+div.nine_column.section div.two {width:20%;}
+div.nine_column.section div.three {width:30%;}
+div.nine_column.section div.four {width:40%;}
+div.nine_column.section div.five {width:50%;}
+div.nine_column.section div.six {width:60%;}
+div.nine_column.section div.seven {width:70%;}
+div.nine_column.section div.eight {width:80%;}
+div.nine_column.section div.nine {width:90%;}
+
+div.column .space-all{
+    padding: 30px;
+}
+div.column .space-top{
+    padding-top: 30px;
+}
+div.column .space-bottom{
+    padding-bottom: 30px;
+}
+div.column .space-left{
+    padding-left: 30px;
+}
+div.column .space-right{
+    padding-left: 30px;
+}
+
+/**
+ * Horizontal CSS Drop-Down Menu Module
+ *
+ */
+
+ul.dropdown,
+ul.dropdown li,
+ul.dropdown ul {
+ list-style: none;
+ margin: 0;
+ padding: 0;
+}
+
+ul.dropdown {
+ position: relative;
+ z-index: 597;
+ float: left;
+}
+
+ul.dropdown li {
+ float: left;
+ line-height: 1.3em;
+ vertical-align: middle;
+ zoom: 1;
+}
+
+ul.dropdown li.hover,
+ul.dropdown li:hover {
+ position: relative;
+ z-index: 599;
+ cursor: default;
+}
+
+ul.dropdown ul {
+ visibility: hidden;
+ position: absolute;
+ top: 100%;
+ left: 0;
+ z-index: 598;
+ width: 100%;
+}
+
+ul.dropdown ul li {
+ float: none;
+}
+
+ul.dropdown ul ul {
+ top: 1px;
+ left: 99%;
+}
+
+ul.dropdown li:hover > ul {
+ visibility: visible;
+}
+
+.caption{
+    font-weight: bold;
+    display: block;
+    margin-bottom: 15px;
+}

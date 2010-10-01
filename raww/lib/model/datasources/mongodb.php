@@ -137,6 +137,9 @@ class MongoDbDataSource extends DataSource{
         $cursor = $this->db->{$table}->find($conditions, $fields);
         return iterator_to_array($cursor);
     }
-  
+    
+    public function all($table, $conditions=array(), $fields=array()){
+        return iterator_to_array($this->db->{$table}->find($conditions, $fields));
+    }
   
 }

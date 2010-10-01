@@ -119,6 +119,9 @@ class App{
       case 'AppController':
         $classPath = RAWW_APP_MODULES.'app_controller.php';
         break;
+      case 'AuthController':
+        $classPath = RAWW_APP_MODULES.'auth_controller.php';
+        break;
       case 'AppModel':
         $classPath = RAWW_APP_MODULES.'app_model.php';
         break;
