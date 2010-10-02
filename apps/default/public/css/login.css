@@ -1,0 +1,19 @@
+body{
+    background: #676A72;
+}
+
+#loginbox{
+    width: 400px;
+    margin: 100px auto;
+
+    padding: 20px;
+    background: #fff;
+    
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    
+    box-shadow: 0px 0px 20px #222;
+    -webkit-box-shadow: 0px 0px 20px #222;
+    -moz-box-shadow: 0px 0px 20px #222;
+}
